@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply rounded-full border border-red-200 px-4 py-2 text-sm transition-all duration-300 focus:outline-none focus:ring focus:ring-red-400 md:px-6 md:py-3;
+  }
+
+  .loader {
+    width: 60px;
+    aspect-ratio: 4;
+    background: radial-gradient(circle closest-side, #e04747 90%, #0000) 0 /
+      calc(100% / 3) 100% space;
+    clip-path: inset(0 100% 0 0);
+    animation: loading 1s steps(4) infinite;
+  }
+
+  @keyframes loading {
+    to {
+      clip-path: inset(0 -34% 0 0);
+    }
+  }
+}
